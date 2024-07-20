@@ -22,7 +22,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: hc.cityapp.vx
+  - host: cityapp
     http:
       paths:
       - path: /
@@ -34,7 +34,7 @@ spec:
               number: 8080
   tls:
   - hosts:
-    - hc.cityapp.vx
+    - cityapp
     secretName: hc-cert
 ---
 apiVersion: apps/v1
@@ -58,7 +58,7 @@ spec:
         imagePullPolicy: IfNotPresent
         env:
         - name: DBADDR
-          value: mysql.vx
+          value: 10.0.0.3:3306
         - name: DBPASS
           value: Cyberark1
         - name: DBUSER
